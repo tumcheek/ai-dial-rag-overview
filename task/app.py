@@ -101,7 +101,7 @@ class MicrowaveRAG:
         #       - k=k
         #       - score_threshold=score
 
-        search_results = self.vectorstore.similarity_search_with_score(query, k=k) # Do not use similarity_search method here with score threshold cuz it does not search by score
+        search_results = self.vectorstore.similarity_search_with_relevance_scores(query, k=k, score_threshold=score)
 
         context_parts = []
         # TODO:
